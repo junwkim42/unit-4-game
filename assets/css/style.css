@@ -1,0 +1,52 @@
+.Gems{
+    width: 75px;
+    height: 75px;
+}
+
+.docname {
+    background-color: orange;
+    padding: 15px;
+    color: #ffffff;
+    font-family: 'Lilita One', cursive;
+    font-size: 50px;
+    line-height: 150%;
+    font-weight: 400;
+}
+
+.bodywrap {
+    background-color: bisque;
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 400px;
+    padding-top: 25px;
+}
+
+.goalwrap {
+    background-color: green;
+    color: purple;
+    font-size: 50px;
+}
+
+.scorewrap {
+    background-color: aqua;
+}
+
+.totalwrap {
+    background-color: teal;
+    color: white;
+}
+
+#uTotal {
+    font-size: 50px;
+    min-height: 150px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    background-color: darkslateblue;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+li {
+    margin: 15px 0;
+}

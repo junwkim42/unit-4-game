@@ -107,7 +107,7 @@ $(document).ready(function(){
            if (userTotal > Goal){
                if(!recorded){
                    lose++;
-                   $("#losecount").text(lose);
+                   $("#losecount").text("Loses: "+lose);
                    setTimeout(gamestart, 500);
                 } 
                gemInitialize();
@@ -115,7 +115,7 @@ $(document).ready(function(){
            else if (userTotal == Goal){
                if(!recorded){
                    win++;
-                   $("#wincount").text(win);
+                   $("#wincount").text("Wins: "+win);
                    setTimeout(gamestart, 500);
                }
                gemInitialize();
