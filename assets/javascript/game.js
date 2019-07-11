@@ -1,8 +1,3 @@
-//The random number shown at the start of the game 
-//should be between 19 - 120.
-//Each crystal should have a random hidden value between 1 - 12.
-
-
 $(document).ready(function(){
 // ------ Variables ----------
 // Gem1 - 4 storing value of each gem
@@ -10,7 +5,7 @@ $(document).ready(function(){
 // userTotal : accumulated point of user for each game
 // win, lose : count of wins and loses.
 // recorded : boolean flag to check if player's win/lose count has been already recorded.
-//            prevents win/lose
+//            prevents lose count and userTotal abuse which can happen within 0.5sec delay between each new game.
     var Gem1 = 0;
     var Gem2 = 0;
     var Gem3 = 0;
@@ -22,15 +17,15 @@ $(document).ready(function(){
     var recorded = false;
 
 // ------- Functions ---------
-// gamestart() : pick random value for each gem between 1 - 12
-// Goal : goal is a combination of gem values such that there will never be impossible objectives
-// userTotal : initialized to 0 every game
+// gamestart() : sets up the game to initial play condition 
+//               pick random value for each gem between 1 - 12
+//               Goal is a combination of gem values such that there will never be impossible objective score
+//               userTotal should be initialized to 0 every game
 
 // dupCheck() : checks if there are any duplicate values among gems.
 //              also checks if the goal value is less than 19 or over 120
 //              if any of above condition is met, return true (assignment criteria fail)
 //              else return false (assignment criteria has been met)
-
     function gamestart(){
         
         Gem1 = Math.floor(Math.random() * 12) + 1;
@@ -54,7 +49,7 @@ $(document).ready(function(){
         }
         // if dupCheck() returns true, re-run gamestart and re-initialize gem and goal values.
         // this recursion process continues until dupCheck() returns false.
-        // in bigger functions, re-initialize only variables with duplicate values
+        // in bigger functions/projects, re-initialize only variables with duplicate values
         if(dupCheck()){
             gamestart();
         }
@@ -75,9 +70,8 @@ $(document).ready(function(){
     // reset Gem 1 - 4 values to 0
     // set recorded to true. (win/lose score has been recorded)
     // used to prevent players from adding more values after game over (win or lose)
-    // by multi-clicking gems within 0.5 sec delay before new game starts
+    // by fast-clicking gems within 0.5 sec delay before new game starts
     function gamebody(){
-        //   debugger;
            function gemInitialize(){
                Gem1 = 0;
                Gem2 = 0;
