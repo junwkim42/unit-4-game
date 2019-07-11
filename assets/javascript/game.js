@@ -61,6 +61,7 @@ $(document).ready(function(){
         else{
             $("#Goalpoint").text(Goal);
             $("#uTotal").text(userTotal);
+            $("#resultmsg").text("");
         }
     }
 
@@ -108,6 +109,7 @@ $(document).ready(function(){
                if(!recorded){
                    lose++;
                    $("#losecount").text("Loses: "+lose);
+                   $("#resultmsg").text("You Lost :(");
                    setTimeout(gamestart, 500);
                 } 
                gemInitialize();
@@ -116,6 +118,7 @@ $(document).ready(function(){
                if(!recorded){
                    win++;
                    $("#wincount").text("Wins: "+win);
+                   $("#resultmsg").text("Good Job :)");
                    setTimeout(gamestart, 500);
                }
                gemInitialize();
